@@ -32,7 +32,7 @@ let display = document.getElementById("display");
 let digits = document.querySelectorAll(".digits");
 for (let i= 0; i< digits.length; i++){
    digits[i].onclick = function(e){
-   display.textContent= e.target.textContent;
+   display.textContent+= e.target.textContent;
    }
 }
 
