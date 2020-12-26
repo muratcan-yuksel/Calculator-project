@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function(){
 // 4 basic operation functions
 let addition = function (x, y){
 return x + y;
@@ -24,3 +25,37 @@ if (x == "+") {
 }
 
 }
+
+//get the display part
+let display = document.getElementById("display");
+//numbers are displayed
+let digits = document.querySelectorAll(".digits");
+for (let i= 0; i< digits.length; i++){
+   digits[i].onclick = function(e){
+   display.textContent= e.target.textContent;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
