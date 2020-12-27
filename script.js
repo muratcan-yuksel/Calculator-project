@@ -31,12 +31,42 @@ let display = document.getElementById("display");
 //numbers are displayed
 let digits = document.querySelectorAll(".digits");
 for (let i= 0; i< digits.length; i++){
-   digits[i].onclick = function(e){
-   display.textContent+= e.target.textContent;
-   }
+   digits[i].addEventListener("click", function(e) {
+  let displayValue= display.textContent+= e.target.textContent;
+   console.log (displayValue);
+   
+   });
 }
 
+//get the operation buttons
+let addition = document.getElementsByClassName("addition");
+let subtraction = document.getElementsByClassName("subtraction");
+let multiplication = document.getElementsByClassName("multiplication");
+let division = document.getElementsByClassName("division");
 
+
+
+
+
+
+
+
+
+
+/*
+document.getElementById("one").addEventListener("click", function(e){
+
+    let displayValue= display.textContent+= e.target.textContent;
+    console.log (displayValue);
+
+})
+document.getElementById("two").addEventListener("click", function(e){
+
+    let displayValue= display.textContent+= e.target.textContent;
+    console.log (displayValue);
+
+})
+*/
 
 
 
