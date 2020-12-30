@@ -1,6 +1,7 @@
 
 // 4 basic operation functions
 let addition = function (x, y){
+ //parseInt so that it won't chain but add them up
 return parseInt(x) + parseInt (y);
 }
 let subtraction = function (x, y) {
@@ -10,7 +11,8 @@ let multiplication = function (x,y) {
     return x * y;
 }
 let division = function (x,y){
-    return x / y;
+      return x / y;
+   
 }
 
 
@@ -21,6 +23,7 @@ let multiplicationButton = document.getElementById("multiplication");
 let divisionButton = document.getElementById("division");
 
 
+
 //get the display part
 let display = document.getElementById("display");
 //numbers are displayed
@@ -28,15 +31,13 @@ let digits = document.querySelectorAll(".digits");
 for (let i= 0; i< digits.length; i++){
    digits[i].addEventListener("click", function(e) {
        let displayValue= display.textContent+= e.target.textContent;
-//displayValue.split();
-
    console.log (displayValue);
   
    });
 }
 //subtraction button listener
 subtractionButton.addEventListener("click", function (e){
-    localStorage.setItem("dispNumber", display.textContent);
+       localStorage.setItem("dispNumber", display.textContent);
     //se the operator for the operate function to take
    localStorage.setItem("operator", "-");
     //empty display area
@@ -45,7 +46,6 @@ subtractionButton.addEventListener("click", function (e){
  
  })
  
- //Ok this one is problematic, it doesn't add but chains the strings
 //addition button listener
 additionButton.addEventListener("click", function (e){
     localStorage.setItem("dispNumber", display.textContent);
@@ -67,7 +67,7 @@ multiplicationButton.addEventListener("click", function (e){
 //division event listener
 divisionButton.addEventListener("click", function (e){
     localStorage.setItem("dispNumber", display.textContent);
-    //se the operator for the operate function to take
+    //set the operator for the operate function to take on
    localStorage.setItem("operator", "/");
     //empty display area
  display.textContent="";
@@ -77,7 +77,6 @@ divisionButton.addEventListener("click", function (e){
 let equalsTo= document.getElementById("equals");
 //makes a subtraction of the two given numbers
 equalsTo.addEventListener("click", function(e){
-   // display.textContent= (localStorage.getItem("dispNumber") - display.textContent );
  //shorten the parameters
 let x = localStorage.getItem("operator");
 let y= localStorage.getItem("dispNumber");
@@ -99,14 +98,14 @@ let operate = function (x,y,z) {
         return multiplication(y,z);
     }else if (x=="/"){
         return division(y,z);
+        
     }
     }
 
 
 
 
-
-
+ 
 
 
 
