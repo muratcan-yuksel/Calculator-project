@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(){
+//document.addEventListener("DOMContentLoaded", function(){
 // 4 basic operation functions
 let addition = function (x, y){
 return x + y;
@@ -13,19 +13,7 @@ let division = function (x,y){
     return x / y;
 }
 
-// a function that calls the operation functions 
-let operate = function (x,y,z) {
-if (x == "+") {
-   return addition(y,z);
-} else if ( x== "-"){
-    return subtraction(y,z);
-}else if (x== "*"){
-    return multiplication(y,z);
-}else if (x=="/"){
-    return division(y,z);
-}
 
-}
 //get the operation buttons
 let additionButton = document.getElementById("addition");
 let subtractionButton = document.getElementById("subtraction");
@@ -50,7 +38,7 @@ for (let i= 0; i< digits.length; i++){
 
 subtractionButton.addEventListener("click", function (e){
     localStorage.setItem("dispNumber", display.textContent);
-   
+   localStorage.setItem("operator", "-");
     //empty display area
  display.textContent="";
  
@@ -61,9 +49,30 @@ subtractionButton.addEventListener("click", function (e){
 let equalsTo= document.getElementById("equals");
 //makes a subtraction of the two given numbers
 equalsTo.addEventListener("click", function(e){
-    display.textContent= (localStorage.getItem("dispNumber") - display.textContent );
+   // display.textContent= (localStorage.getItem("dispNumber") - display.textContent );
+ 
+let x = localStorage.getItem("operator");
+let y= localStorage.getItem("dispNumber");
+let z = display.textContent;
+
+console.log(  y - z);
+console.log (x);
+//operate(x,y,z);
 
 })
+// a function that calls the operation functions 
+let operate = function (x,y,z) {
+    if (x == "+") {
+       return addition(y,z);
+    } else if ( x== "-"){
+        return subtraction(y,z);
+    }else if (x== "*"){
+        return multiplication(y,z);
+    }else if (x=="/"){
+        return division(y,z);
+    }
+    
+    }
 
 
 
@@ -86,5 +95,4 @@ equalsTo.addEventListener("click", function(e){
 
 
 
-
-});
+//});
