@@ -26,6 +26,12 @@ if (x == "+") {
 }
 
 }
+//get the operation buttons
+let additionButton = document.getElementById("addition");
+let subtractionButton = document.getElementById("subtraction");
+let multiplicationButton = document.getElementById("multiplication");
+let divisionButton = document.getElementById("division");
+
 
 //get the display part
 let display = document.getElementById("display");
@@ -42,21 +48,12 @@ for (let i= 0; i< digits.length; i++){
    });
 }
 
-
-
-//get the operation buttons
-let additionButton = document.getElementById("addition");
-let subtractionButton = document.getElementById("subtraction");
-let multiplicationButton = document.getElementById("multiplication");
-let divisionButton = document.getElementById("division");
-
-
-
 subtractionButton.addEventListener("click", function (e){
     localStorage.setItem("dispNumber", display.textContent);
+   
     //empty display area
  display.textContent="";
-
+ 
  
  })
 
