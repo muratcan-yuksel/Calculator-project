@@ -81,11 +81,11 @@ equalsTo.addEventListener("click", function(e){
 let x = localStorage.getItem("operator");
 let y= localStorage.getItem("dispNumber");
 let z = display.textContent;
-
 //console.log(  y - z);
 console.log (x);
 operate(x,y,z);
 display.textContent= (operate(x,y,z));
+//localStorage.setItem("dispNumber", (operate(x,y,z)));
 })
 
 // a function that calls the operation functions 
@@ -102,7 +102,18 @@ let operate = function (x,y,z) {
     }
     }
 
-
+    let operate2 = function (x,y,z) {
+        if (x == "+") {
+           return addition(y,z);
+        } else if ( x== "-"){
+            return subtraction(y,z);
+        }else if (x== "*"){
+            return multiplication(y,z);
+        }else if (x=="/"){
+            return division(y,z);
+            
+        }
+        }
 
 
  
