@@ -58,7 +58,7 @@ let z = display.textContent;
 //console.log(  y - z);
 console.log (x);
 operate(x,y,z);
-console.log(operate(x,y,z));
+display.textContent= (operate(x,y,z));
 
 })
 // a function that calls the operation functions 
