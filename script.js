@@ -41,11 +41,15 @@ for (let i= 0; i< digits.length; i++){
 //clear button listener
 clearButton.addEventListener("click", function (e){
    sessionStorage.removeItem("dispNumber");
+   sessionStorage.removeItem("operator");
+   sessionStorage.removeItem("chainNumber");
     console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
-    sessionStorage.removeItem("operator");
+    
     console.log( "operator" +  sessionStorage.getItem("operator"));
-     sessionStorage.removeItem("chainNumber");
+    
     console.log("chainNo" + sessionStorage.getItem("chainNumber"));
+
+    display.textContent = "";
 })
 
 //subtraction button listener
@@ -110,6 +114,9 @@ let z = display.textContent;
 console.log (x);
 operate(x,y,z);
 display.textContent= (operate(x,y,z));
+sessionStorage.removeItem("dispNumber");
+   sessionStorage.removeItem("operator");
+   sessionStorage.removeItem("chainNumber");
 //sessionStorage.setItem("dispNumber", (operate(x,y,z)));
 })
 
