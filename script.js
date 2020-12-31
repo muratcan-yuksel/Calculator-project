@@ -31,6 +31,7 @@ let digits = document.querySelectorAll(".digits");
 for (let i= 0; i< digits.length; i++){
    digits[i].addEventListener("click", function(e) {
        let displayValue= display.textContent+= e.target.textContent;
+       localStorage.setItem("chainNumber", displayValue);
    console.log (displayValue);
   
    });
@@ -66,6 +67,12 @@ multiplicationButton.addEventListener("click", function (e){
 
 //division event listener
 divisionButton.addEventListener("click", function (e){
+    let y= localStorage.getItem("dispNumber");
+    console.log(localStorage.getItem("dispNumber"));
+    let x = localStorage.getItem("operator");
+    console.log( localStorage.getItem("operator"));
+    let z = localStorage.getItem("chainNumber");
+    console.log(localStorage.getItem("chainNumber"));
     localStorage.setItem("dispNumber", display.textContent);
     //set the operator for the operate function to take on
    localStorage.setItem("operator", "/");
