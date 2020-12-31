@@ -175,19 +175,7 @@ let operate = function (x,y,z) {
     }
     }
 
-    let operate2 = function (x,y,z) {
-        if (x == "+") {
-           return addition(y,z);
-        } else if ( x== "-"){
-            return subtraction(y,z);
-        }else if (x== "*"){
-            return multiplication(y,z);
-        }else if (x=="/"){
-            return division(y,z);
-            
-        }
-        }
-
+   
 
  
 
