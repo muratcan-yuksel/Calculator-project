@@ -30,8 +30,9 @@ let display = document.getElementById("display");
 let digits = document.querySelectorAll(".digits");
 for (let i= 0; i< digits.length; i++){
    digits[i].addEventListener("click", function(e) {
+       
        let displayValue= display.textContent+= e.target.textContent;
-       localStorage.setItem("chainNumber", displayValue);
+       localStorage.setItem("chainNumber", display.textContent);
    console.log (displayValue);
   
    });
@@ -58,6 +59,15 @@ additionButton.addEventListener("click", function (e){
 
 //multiplication event listener
 multiplicationButton.addEventListener("click", function (e){
+    let y= localStorage.getItem("dispNumber");
+    console.log(localStorage.getItem("dispNumber"));
+    let x = localStorage.getItem("operator");
+    console.log( localStorage.getItem("operator"));
+    let z = localStorage.getItem("chainNumber");
+    console.log(localStorage.getItem("chainNumber"));
+    operate (x,y,z);
+    console.log (operate(x,y,z));
+    display.textContent = operate(x,y,z);
     localStorage.setItem("dispNumber", display.textContent);
     //se the operator for the operate function to take
    localStorage.setItem("operator", "*");
@@ -73,6 +83,10 @@ divisionButton.addEventListener("click", function (e){
     console.log( localStorage.getItem("operator"));
     let z = localStorage.getItem("chainNumber");
     console.log(localStorage.getItem("chainNumber"));
+    operate (x,y,z);
+    console.log (operate(x,y,z));
+    display.textContent = operate(x,y,z);
+    
     localStorage.setItem("dispNumber", display.textContent);
     //set the operator for the operate function to take on
    localStorage.setItem("operator", "/");
@@ -107,6 +121,11 @@ let operate = function (x,y,z) {
         return division(y,z);
         
     }
+    localStorage.removeItem("dispNumber");
+    
+    localStorage.removeItem("operator");
+   
+    llocalStorage.removeItem("chainNumber");
     }
 
     let operate2 = function (x,y,z) {
