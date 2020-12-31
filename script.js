@@ -54,6 +54,19 @@ clearButton.addEventListener("click", function (e){
 
 //subtraction button listener
 subtractionButton.addEventListener("click", function (e){
+    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null  ) {
+        let y= sessionStorage.getItem("dispNumber");
+        console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
+        let x = sessionStorage.getItem("operator");
+        console.log( "operator" +  sessionStorage.getItem("operator"));
+        let z = sessionStorage.getItem("chainNumber");
+        console.log("chainNo" + sessionStorage.getItem("chainNumber"));
+        operate (x,y,z);
+        console.log (operate(x,y,z));
+        display.textContent = operate(x,y,z);
+
+    }
+    
        sessionStorage.setItem("dispNumber", display.textContent);
     //se the operator for the operate function to take
    sessionStorage.setItem("operator", "-");
@@ -65,6 +78,18 @@ subtractionButton.addEventListener("click", function (e){
  
 //addition button listener
 additionButton.addEventListener("click", function (e){
+    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null  ) {
+        let y= sessionStorage.getItem("dispNumber");
+        console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
+        let x = sessionStorage.getItem("operator");
+        console.log( "operator" +  sessionStorage.getItem("operator"));
+        let z = sessionStorage.getItem("chainNumber");
+        console.log("chainNo" + sessionStorage.getItem("chainNumber"));
+        operate (x,y,z);
+        console.log (operate(x,y,z));
+        display.textContent = operate(x,y,z);
+
+    }
     
     sessionStorage.setItem("dispNumber", display.textContent);
     //se the operator for the operate function to take
@@ -75,15 +100,19 @@ additionButton.addEventListener("click", function (e){
 
 //multiplication event listener
 multiplicationButton.addEventListener("click", function (e){
-    let y= sessionStorage.getItem("dispNumber");
-    console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
-    let x = sessionStorage.getItem("operator");
-    console.log( "operator" +  sessionStorage.getItem("operator"));
-    let z = sessionStorage.getItem("chainNumber");
-    console.log("chainNo" + sessionStorage.getItem("chainNumber"));
-    operate (x,y,z);
-    console.log (operate(x,y,z));
-    display.textContent = operate(x,y,z);
+    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null  ) {
+        let y= sessionStorage.getItem("dispNumber");
+        console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
+        let x = sessionStorage.getItem("operator");
+        console.log( "operator" +  sessionStorage.getItem("operator"));
+        let z = sessionStorage.getItem("chainNumber");
+        console.log("chainNo" + sessionStorage.getItem("chainNumber"));
+        operate (x,y,z);
+        console.log (operate(x,y,z));
+        display.textContent = operate(x,y,z);
+
+    }
+    
     sessionStorage.setItem("dispNumber", display.textContent);
     //se the operator for the operate function to take
    sessionStorage.setItem("operator", "*");
@@ -93,15 +122,19 @@ multiplicationButton.addEventListener("click", function (e){
 
 //division event listener
 divisionButton.addEventListener("click", function (e){
-    let y= sessionStorage.getItem("dispNumber");
-    console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
-    let x = sessionStorage.getItem("operator");
-    console.log( "operator" +  sessionStorage.getItem("operator"));
-    let z = sessionStorage.getItem("chainNumber");
-    console.log("chainNo" + sessionStorage.getItem("chainNumber"));
-    operate (x,y,z);
-    console.log (operate(x,y,z));
-    display.textContent = operate(x,y,z);
+    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null  ) {
+        let y= sessionStorage.getItem("dispNumber");
+        console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
+        let x = sessionStorage.getItem("operator");
+        console.log( "operator" +  sessionStorage.getItem("operator"));
+        let z = sessionStorage.getItem("chainNumber");
+        console.log("chainNo" + sessionStorage.getItem("chainNumber"));
+        operate (x,y,z);
+        console.log (operate(x,y,z));
+        display.textContent = operate(x,y,z);
+
+    }
+    
     
     sessionStorage.setItem("dispNumber", display.textContent);
     //set the operator for the operate function to take on
