@@ -41,6 +41,8 @@ let multiplicationButton = document.getElementById("multiplication");
 let divisionButton = document.getElementById("division");
 //get the clear button
 let clearButton = document.getElementById("clear");
+//get the floating numbers button
+let floatButton = document.getElementById("float");
 
 
 //get the display part
@@ -163,6 +165,13 @@ divisionButton.addEventListener("click", function (e){
     //empty display area
  display.textContent="";
  })
+//add floating number functionality
+floatButton.addEventListener("click", function (e){
+let floatNumber = display.textContent =display.textContent  + ".";
+console.log(floatNumber);
+
+})
+
 
 //equals event listener
 let equalsTo= document.getElementById("equals");
