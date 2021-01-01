@@ -43,6 +43,8 @@ const divisionButton = document.getElementById("division");
 const clearButton = document.getElementById("clear");
 //get the floating numbers button
 const floatButton = document.getElementById("float");
+//get the backspace button
+const deleteButton = document.getElementById("backspace");
 
 
 //get the display part
@@ -50,8 +52,7 @@ let display = document.getElementById("display");
 //numbers are displayed
 let digits = document.querySelectorAll(".digits");
 for (let i= 0; i< digits.length; i++){
-    //OK whatever I did, I fucked up around here.
-   digits[i].addEventListener("click", function(e) {
+       digits[i].addEventListener("click", function(e) {
       
        //fixes the Nope123124 etc. issue
        if (display.textContent==="Nope" || display.textContent === 0 || clicked ==true ){
@@ -70,6 +71,18 @@ for (let i= 0; i< digits.length; i++){
   
    });
 }
+//delete button event listener
+deleteButton.addEventListener("click", function(e){
+   let backSpaceDisplay= display.textContent;
+    let arr = backSpaceDisplay.split("");
+    console.log(arr);
+    let deletes= arr.pop();
+    console.log(arr);
+    let str= arr.join("");
+     console.log(str);
+    display.textContent=str;
+    str = sessionStorage.setItem("dispNumber", display.textContent);
+})
 
 //clear button listener
 clearButton.addEventListener("click", function (e){
