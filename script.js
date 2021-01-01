@@ -12,9 +12,25 @@ let multiplication = function (x,y) {
     return +(Math.round((x * y) + "e+2")  + "e-2");
 }
 let division = function (x,y){
-      return +(Math.round((x / y) + "e+2")  + "e-2");
+          return +(Math.round((x / y) + "e+2")  + "e-2");
    
 }
+// a function that calls the operation functions 
+let operate = function (x,y,z) {
+    if (x == "+") {
+       return addition(y,z);
+    } else if ( x== "-"){
+        return subtraction(y,z);
+    }else if (x== "*"){
+        return multiplication(y,z);
+    }else if (x=="/" && z== 0){ //snarky error mesage for divided by zero
+        return display.textContent="Nope";
+    }else if (x=="/"){
+        return division(y,z);
+        
+    }
+    }
+
 
 
 //get the operation buttons
@@ -32,9 +48,13 @@ let display = document.getElementById("display");
 let digits = document.querySelectorAll(".digits");
 for (let i= 0; i< digits.length; i++){
    digits[i].addEventListener("click", function(e) {
+       //fixes the Nope123124 etc. issue
+       if (display.textContent=="Nope"){
+           return display.textContent="" + e.target.textContent;
+       }else {
        let displayValue= display.textContent+= e.target.textContent;
        sessionStorage.setItem("chainNumber", display.textContent);
-   console.log (displayValue);
+   console.log (displayValue);}
   
    });
 }
@@ -158,22 +178,10 @@ display.textContent= (operate(x,y,z));
 sessionStorage.removeItem("dispNumber");
    sessionStorage.removeItem("operator");
    sessionStorage.removeItem("chainNumber");
+   
 //sessionStorage.setItem("dispNumber", (operate(x,y,z)));
 })
 
-// a function that calls the operation functions 
-let operate = function (x,y,z) {
-    if (x == "+") {
-       return addition(y,z);
-    } else if ( x== "-"){
-        return subtraction(y,z);
-    }else if (x== "*"){
-        return multiplication(y,z);
-    }else if (x=="/"){
-        return division(y,z);
-        
-    }
-    }
 
    
 
