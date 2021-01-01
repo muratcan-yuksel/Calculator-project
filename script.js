@@ -165,12 +165,11 @@ divisionButton.addEventListener("click", function (e){
     //empty display area
  display.textContent="";
  })
-//add floating number functionality
-floatButton.addEventListener("click", function (e){
-let floatNumber = display.textContent =display.textContent  + ".";
-console.log(floatNumber);
 
-})
+ floatButton.addEventListener("click", function(e){
+     let element= document.getElementById("float");
+     element.id= float1;
+ })
 
 
 //equals event listener
@@ -194,19 +193,5 @@ sessionStorage.removeItem("dispNumber");
 
 
    
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
 
 
