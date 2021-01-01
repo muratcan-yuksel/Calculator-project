@@ -1,8 +1,9 @@
 
 // 4 basic operation functions
 let addition = function (x, y){
- //parseInt so that it won't chain but add them up
-return parseInt(x) + parseInt (y);
+    //parseFloat turns the string into numbers so that it won't concat
+ return +(Math.round((parseFloat(x) + parseFloat(y)) + "e+2")  + "e-2");
+
 }
 //following math round rounds the long decimal numbers
 let subtraction = function (x, y) {
@@ -49,7 +50,7 @@ let digits = document.querySelectorAll(".digits");
 for (let i= 0; i< digits.length; i++){
    digits[i].addEventListener("click", function(e) {
        //fixes the Nope123124 etc. issue
-       if (display.textContent=="Nope"){
+       if (display.textContent=="Nope" || display.textContent == 0){
            return display.textContent="" + e.target.textContent;
        }else {
        let displayValue= display.textContent+= e.target.textContent;
