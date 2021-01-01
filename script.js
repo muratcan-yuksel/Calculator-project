@@ -102,7 +102,7 @@ floatButton.disabled=false;
 //subtraction button listener
 subtractionButton.addEventListener("click", function (e){
     //do the following only if it's a fresh start
-    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null  ) {
+    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null && display.textContent!==""  ) {
         let y= sessionStorage.getItem("dispNumber");
         console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
         let x = sessionStorage.getItem("operator");
@@ -127,7 +127,7 @@ subtractionButton.addEventListener("click", function (e){
 //addition button listener
 additionButton.addEventListener("click", function (e){
     //do the following only if it's a fresh start
-    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null  ) {
+    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null && display.textContent!==""  ) {
         let y= sessionStorage.getItem("dispNumber");
         console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
         let x = sessionStorage.getItem("operator");
@@ -150,7 +150,7 @@ additionButton.addEventListener("click", function (e){
 //multiplication event listener
 multiplicationButton.addEventListener("click", function (e){
     //do the following only if it's a fresh start
-    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null  ) {
+    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null && display.textContent!==""   ) {
         let y= sessionStorage.getItem("dispNumber");
         console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
         let x = sessionStorage.getItem("operator");
@@ -173,7 +173,7 @@ multiplicationButton.addEventListener("click", function (e){
 //division event listener
 divisionButton.addEventListener("click", function (e){
     //do the following only if it's a fresh start
-    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null  ) {
+    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null && display.textContent!==""   ) {
         let y= sessionStorage.getItem("dispNumber");
         console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
         let x = sessionStorage.getItem("operator");
