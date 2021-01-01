@@ -51,9 +51,12 @@ let display = document.getElementById("display");
 let digits = document.querySelectorAll(".digits");
 for (let i= 0; i< digits.length; i++){
    digits[i].addEventListener("click", function(e) {
+      
        //fixes the Nope123124 etc. issue
-       if (display.textContent=="Nope" || display.textContent == 0){
-           return display.textContent="" + e.target.textContent;
+       if (display.textContent=="Nope" || display.textContent == 0 || clicked == true){
+        clicked = false;   
+        return display.textContent="" + e.target.textContent;
+           
        }else {
        let displayValue= display.textContent+= e.target.textContent;
        sessionStorage.setItem("chainNumber", display.textContent);
@@ -181,7 +184,8 @@ floatButton.disabled=true;
 
  })
 
-
+//this will help solving the issue with starting afresh after pressing result
+let clicked = false;
 //equals event listener
 let equalsTo= document.getElementById("equals");
 //makes a subtraction of the two given numbers
@@ -199,7 +203,9 @@ sessionStorage.removeItem("dispNumber");
    sessionStorage.removeItem("chainNumber");
    //disable the float button
    floatButton.disabled=true;
-//sessionStorage.setItem("dispNumber", (operate(x,y,z)));
+//get the clicked true so that the digits function can check it
+   clicked= true;
+
 })
 
 
