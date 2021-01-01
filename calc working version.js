@@ -1,48 +1,28 @@
 
 // 4 basic operation functions
 let addition = function (x, y){
-    //parseFloat turns the string into numbers so that it won't concat
- return +(Math.round((parseFloat(x) + parseFloat(y)) + "e+2")  + "e-2");
-
+ //parseInt so that it won't chain but add them up
+return parseInt(x) + parseInt (y);
 }
-//following math round rounds the long decimal numbers
 let subtraction = function (x, y) {
-    return +(Math.round((x - y) + "e+2")  + "e-2");
+    return x - y;
 }
 let multiplication = function (x,y) {
-    return +(Math.round((x * y) + "e+2")  + "e-2");
+    return x * y;
 }
 let division = function (x,y){
-          return +(Math.round((x / y) + "e+2")  + "e-2");
+      return x / y;
    
 }
-// a function that calls the operation functions 
-let operate = function (x,y,z) {
-    if (x == "+") {
-       return addition(y,z);
-    } else if ( x== "-"){
-        return subtraction(y,z);
-    }else if (x== "*"){
-        return multiplication(y,z);
-    }else if (x=="/" && z== 0){ //snarky error mesage for divided by zero
-        return display.textContent="Nope";
-    }else if (x=="/"){
-        return division(y,z);
-        
-    }
-    }
-
 
 
 //get the operation buttons
-const additionButton = document.getElementById("addition");
-const subtractionButton = document.getElementById("subtraction");
-const multiplicationButton = document.getElementById("multiplication");
-const divisionButton = document.getElementById("division");
+let additionButton = document.getElementById("addition");
+let subtractionButton = document.getElementById("subtraction");
+let multiplicationButton = document.getElementById("multiplication");
+let divisionButton = document.getElementById("division");
 //get the clear button
-const clearButton = document.getElementById("clear");
-//get the floating numbers button
-const floatButton = document.getElementById("float");
+let clearButton = document.getElementById("clear");
 
 
 //get the display part
@@ -50,23 +30,10 @@ let display = document.getElementById("display");
 //numbers are displayed
 let digits = document.querySelectorAll(".digits");
 for (let i= 0; i< digits.length; i++){
-    //OK whatever I did, I fucked up around here.
    digits[i].addEventListener("click", function(e) {
-      
-       //fixes the Nope123124 etc. issue
-       if (display.textContent==="Nope" || display.textContent === 0 || clicked ==true ){
-           //enable the floatButton
-        floatButton.disabled=false;
-        //disable the floatButton
-        clicked = false;   
-        return display.textContent="" + e.target.textContent;
-           
-       }else {
        let displayValue= display.textContent+= e.target.textContent;
        sessionStorage.setItem("chainNumber", display.textContent);
-             
    console.log (displayValue);
-}
   
    });
 }
@@ -81,14 +48,12 @@ clearButton.addEventListener("click", function (e){
     console.log( "operator" +  sessionStorage.getItem("operator"));
     
     console.log("chainNo" + sessionStorage.getItem("chainNumber"));
-//enable the float button
-floatButton.disabled=false;
+
     display.textContent = "";
 })
 
 //subtraction button listener
 subtractionButton.addEventListener("click", function (e){
-    //do the following only if it's a fresh start
     if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null  ) {
         let y= sessionStorage.getItem("dispNumber");
         console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
@@ -99,9 +64,9 @@ subtractionButton.addEventListener("click", function (e){
         operate (x,y,z);
         console.log (operate(x,y,z));
         display.textContent = operate(x,y,z);
+
     }
-    //enable the float button
-    floatButton.disabled=false;
+    
        sessionStorage.setItem("dispNumber", display.textContent);
     //se the operator for the operate function to take
    sessionStorage.setItem("operator", "-");
@@ -113,7 +78,6 @@ subtractionButton.addEventListener("click", function (e){
  
 //addition button listener
 additionButton.addEventListener("click", function (e){
-    //do the following only if it's a fresh start
     if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null  ) {
         let y= sessionStorage.getItem("dispNumber");
         console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
@@ -124,9 +88,9 @@ additionButton.addEventListener("click", function (e){
         operate (x,y,z);
         console.log (operate(x,y,z));
         display.textContent = operate(x,y,z);
+
     }
-    //enable the float button
-    floatButton.disabled=false;
+    
     sessionStorage.setItem("dispNumber", display.textContent);
     //se the operator for the operate function to take
    sessionStorage.setItem("operator", "+");
@@ -136,7 +100,6 @@ additionButton.addEventListener("click", function (e){
 
 //multiplication event listener
 multiplicationButton.addEventListener("click", function (e){
-    //do the following only if it's a fresh start
     if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null  ) {
         let y= sessionStorage.getItem("dispNumber");
         console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
@@ -147,19 +110,18 @@ multiplicationButton.addEventListener("click", function (e){
         operate (x,y,z);
         console.log (operate(x,y,z));
         display.textContent = operate(x,y,z);
+
     }
-    //enable the float button
-    floatButton.disabled=false;
-     sessionStorage.setItem("dispNumber", display.textContent);
+    
+    sessionStorage.setItem("dispNumber", display.textContent);
     //se the operator for the operate function to take
-     sessionStorage.setItem("operator", "*");
+   sessionStorage.setItem("operator", "*");
     //empty display area
-     display.textContent=""; 
+ display.textContent=""; 
  })
 
 //division event listener
 divisionButton.addEventListener("click", function (e){
-    //do the following only if it's a fresh start
     if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null  ) {
         let y= sessionStorage.getItem("dispNumber");
         console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
@@ -170,27 +132,17 @@ divisionButton.addEventListener("click", function (e){
         operate (x,y,z);
         console.log (operate(x,y,z));
         display.textContent = operate(x,y,z);
+
     }
-//enable the float button
-floatButton.disabled=false;
+    
+    
     sessionStorage.setItem("dispNumber", display.textContent);
     //set the operator for the operate function to take on
    sessionStorage.setItem("operator", "/");
     //empty display area
  display.textContent="";
  })
-//fire float button, disable it once clicked
-floatButton.addEventListener("click", function(e){
-    display.textContent+= (e.target.textContent) + "";
-   /*let element= document.getElementById("float");
-   element.remove();*/
-floatButton.disabled=true;
-   console.log("hello");
 
- })
-
-//this will help solving the issue with starting afresh after pressing result
-let clicked = false;
 //equals event listener
 let equalsTo= document.getElementById("equals");
 //makes a subtraction of the two given numbers
@@ -206,14 +158,21 @@ display.textContent= (operate(x,y,z));
 sessionStorage.removeItem("dispNumber");
    sessionStorage.removeItem("operator");
    sessionStorage.removeItem("chainNumber");
-   //disable the float button
-   floatButton.disabled=true;
-//get the clicked true so that the digits function can check it
-   clicked= true;
-
+//sessionStorage.setItem("dispNumber", (operate(x,y,z)));
 })
 
+// a function that calls the operation functions 
+let operate = function (x,y,z) {
+    if (x == "+") {
+       return addition(y,z);
+    } else if ( x== "-"){
+        return subtraction(y,z);
+    }else if (x== "*"){
+        return multiplication(y,z);
+    }else if (x=="/"){
+        return division(y,z);
+        
+    }
+    }
 
    
-
-
