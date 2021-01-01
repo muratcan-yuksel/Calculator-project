@@ -4,14 +4,15 @@ let addition = function (x, y){
  //parseInt so that it won't chain but add them up
 return parseInt(x) + parseInt (y);
 }
+//following math round rounds the long decimal numbers
 let subtraction = function (x, y) {
-    return x - y;
+    return +(Math.round((x - y) + "e+2")  + "e-2");
 }
 let multiplication = function (x,y) {
-    return x * y;
+    return +(Math.round((x * y) + "e+2")  + "e-2");
 }
 let division = function (x,y){
-      return x / y;
+      return +(Math.round((x / y) + "e+2")  + "e-2");
    
 }
 
@@ -54,6 +55,7 @@ clearButton.addEventListener("click", function (e){
 
 //subtraction button listener
 subtractionButton.addEventListener("click", function (e){
+    //do the following only if it's a fresh start
     if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null  ) {
         let y= sessionStorage.getItem("dispNumber");
         console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
@@ -64,7 +66,6 @@ subtractionButton.addEventListener("click", function (e){
         operate (x,y,z);
         console.log (operate(x,y,z));
         display.textContent = operate(x,y,z);
-
     }
     
        sessionStorage.setItem("dispNumber", display.textContent);
@@ -78,6 +79,7 @@ subtractionButton.addEventListener("click", function (e){
  
 //addition button listener
 additionButton.addEventListener("click", function (e){
+    //do the following only if it's a fresh start
     if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null  ) {
         let y= sessionStorage.getItem("dispNumber");
         console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
@@ -88,7 +90,6 @@ additionButton.addEventListener("click", function (e){
         operate (x,y,z);
         console.log (operate(x,y,z));
         display.textContent = operate(x,y,z);
-
     }
     
     sessionStorage.setItem("dispNumber", display.textContent);
@@ -100,6 +101,7 @@ additionButton.addEventListener("click", function (e){
 
 //multiplication event listener
 multiplicationButton.addEventListener("click", function (e){
+    //do the following only if it's a fresh start
     if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null  ) {
         let y= sessionStorage.getItem("dispNumber");
         console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
@@ -110,18 +112,18 @@ multiplicationButton.addEventListener("click", function (e){
         operate (x,y,z);
         console.log (operate(x,y,z));
         display.textContent = operate(x,y,z);
-
     }
     
-    sessionStorage.setItem("dispNumber", display.textContent);
+     sessionStorage.setItem("dispNumber", display.textContent);
     //se the operator for the operate function to take
-   sessionStorage.setItem("operator", "*");
+     sessionStorage.setItem("operator", "*");
     //empty display area
- display.textContent=""; 
+     display.textContent=""; 
  })
 
 //division event listener
 divisionButton.addEventListener("click", function (e){
+    //do the following only if it's a fresh start
     if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null  ) {
         let y= sessionStorage.getItem("dispNumber");
         console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
@@ -132,10 +134,8 @@ divisionButton.addEventListener("click", function (e){
         operate (x,y,z);
         console.log (operate(x,y,z));
         display.textContent = operate(x,y,z);
-
     }
-    
-    
+
     sessionStorage.setItem("dispNumber", display.textContent);
     //set the operator for the operate function to take on
    sessionStorage.setItem("operator", "/");
