@@ -35,14 +35,14 @@ let operate = function (x,y,z) {
 
 
 //get the operation buttons
-let additionButton = document.getElementById("addition");
-let subtractionButton = document.getElementById("subtraction");
-let multiplicationButton = document.getElementById("multiplication");
-let divisionButton = document.getElementById("division");
+const additionButton = document.getElementById("addition");
+const subtractionButton = document.getElementById("subtraction");
+const multiplicationButton = document.getElementById("multiplication");
+const divisionButton = document.getElementById("division");
 //get the clear button
-let clearButton = document.getElementById("clear");
+const clearButton = document.getElementById("clear");
 //get the floating numbers button
-let floatButton = document.getElementById("float");
+const floatButton = document.getElementById("float");
 
 
 //get the display part
@@ -57,6 +57,7 @@ for (let i= 0; i< digits.length; i++){
        }else {
        let displayValue= display.textContent+= e.target.textContent;
        sessionStorage.setItem("chainNumber", display.textContent);
+             
    console.log (displayValue);}
   
    });
@@ -72,7 +73,8 @@ clearButton.addEventListener("click", function (e){
     console.log( "operator" +  sessionStorage.getItem("operator"));
     
     console.log("chainNo" + sessionStorage.getItem("chainNumber"));
-
+//enable the float button
+floatButton.disabled=false;
     display.textContent = "";
 })
 
@@ -90,7 +92,8 @@ subtractionButton.addEventListener("click", function (e){
         console.log (operate(x,y,z));
         display.textContent = operate(x,y,z);
     }
-    
+    //enable the float button
+    floatButton.disabled=false;
        sessionStorage.setItem("dispNumber", display.textContent);
     //se the operator for the operate function to take
    sessionStorage.setItem("operator", "-");
@@ -114,7 +117,8 @@ additionButton.addEventListener("click", function (e){
         console.log (operate(x,y,z));
         display.textContent = operate(x,y,z);
     }
-    
+    //enable the float button
+    floatButton.disabled=false;
     sessionStorage.setItem("dispNumber", display.textContent);
     //se the operator for the operate function to take
    sessionStorage.setItem("operator", "+");
@@ -136,7 +140,8 @@ multiplicationButton.addEventListener("click", function (e){
         console.log (operate(x,y,z));
         display.textContent = operate(x,y,z);
     }
-    
+    //enable the float button
+    floatButton.disabled=false;
      sessionStorage.setItem("dispNumber", display.textContent);
     //se the operator for the operate function to take
      sessionStorage.setItem("operator", "*");
@@ -158,17 +163,22 @@ divisionButton.addEventListener("click", function (e){
         console.log (operate(x,y,z));
         display.textContent = operate(x,y,z);
     }
-
+//enable the float button
+floatButton.disabled=false;
     sessionStorage.setItem("dispNumber", display.textContent);
     //set the operator for the operate function to take on
    sessionStorage.setItem("operator", "/");
     //empty display area
  display.textContent="";
  })
+//fire float button, disable it once clicked
+floatButton.addEventListener("click", function(e){
+    display.textContent+= (e.target.textContent) + "";
+   /*let element= document.getElementById("float");
+   element.remove();*/
+floatButton.disabled=true;
+   console.log("hello");
 
- floatButton.addEventListener("click", function(e){
-     let element= document.getElementById("float");
-     element.id= float1;
  })
 
 
@@ -187,7 +197,8 @@ display.textContent= (operate(x,y,z));
 sessionStorage.removeItem("dispNumber");
    sessionStorage.removeItem("operator");
    sessionStorage.removeItem("chainNumber");
-   
+   //disable the float button
+   floatButton.disabled=true;
 //sessionStorage.setItem("dispNumber", (operate(x,y,z)));
 })
 
