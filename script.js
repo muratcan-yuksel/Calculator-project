@@ -60,14 +60,20 @@ for (let i= 0; i< digits.length; i++){
         floatButton.disabled=false;
         //disable the floatButton
         clicked = false;   
-        return display.textContent="" + e.target.textContent;
+        
+         display.textContent="" + e.target.textContent;
+        console.log(display.textContent);
+        
+      
            
        }else {
        let displayValue= display.textContent+= e.target.textContent;
+      // console.log(display.textContent);
        sessionStorage.setItem("chainNumber", display.textContent);
       
              
    console.log (displayValue);
+   
 }
   
    });
@@ -193,11 +199,19 @@ divisionButton.addEventListener("click", function (e){
     }
 //enable the float button
 floatButton.disabled=false;
-    sessionStorage.setItem("dispNumber", display.textContent);
+
+    
     //set the operator for the operate function to take on
    sessionStorage.setItem("operator", "/");
    console.log("display number " + sessionStorage.getItem("dispNumber"))
- console.log( "operator " +  sessionStorage.getItem("operator"));
+    console.log( "operator " +  sessionStorage.getItem("operator"));
+    let y =sessionStorage.getItem("dispNumber");
+    let x = sessionStorage.getItem("operator")
+    let z = sessionStorage.getItem("chainNumber");
+    console.log(x,y,z);
+    operate(x,y,z);
+    console.log(operate(x,y,z));
+    sessionStorage.setItem("dispNumber", display.textContent);
     //empty display area
  display.textContent="";
  })
