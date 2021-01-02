@@ -199,19 +199,13 @@ divisionButton.addEventListener("click", function (e){
     }
 //enable the float button
 floatButton.disabled=false;
-
+sessionStorage.setItem("dispNumber", display.textContent);
     
     //set the operator for the operate function to take on
    sessionStorage.setItem("operator", "/");
    console.log("display number " + sessionStorage.getItem("dispNumber"))
-    console.log( "operator " +  sessionStorage.getItem("operator"));
-    let y =sessionStorage.getItem("dispNumber");
-    let x = sessionStorage.getItem("operator")
-    let z = sessionStorage.getItem("chainNumber");
-    console.log(x,y,z);
-    operate(x,y,z);
-    console.log(operate(x,y,z));
-    sessionStorage.setItem("dispNumber", display.textContent);
+   console.log( "operator " +  sessionStorage.getItem("operator"));
+    
     //empty display area
  display.textContent="";
  })
@@ -242,9 +236,9 @@ operate(x,y,z);
 display.textContent= (operate(x,y,z));
 sessionStorage.removeItem("dispNumber");
    sessionStorage.removeItem("operator");
-   sessionStorage.removeItem("chainNumber");
-   sessionStorage.setItem("dispNumber", display.textContent);
-   console.log(sessionStorage.getItem("dispNumber"));
+   sessionStorage.setItem("chainNumber", display.textContent);
+   //sessionStorage.setItem("equalNumber", display.textContent);
+   console.log(sessionStorage.getItem("equalNumber"));
    //disable the float button
    floatButton.disabled=true;
 //get the clicked true so that the digits function can check it
