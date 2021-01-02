@@ -229,6 +229,8 @@ display.textContent= (operate(x,y,z));
 sessionStorage.removeItem("dispNumber");
    sessionStorage.removeItem("operator");
    sessionStorage.removeItem("chainNumber");
+   sessionStorage.setItem("dispNumber", display.textContent);
+   console.log(sessionStorage.getItem("dispNumber"));
    //disable the float button
    floatButton.disabled=true;
 //get the clicked true so that the digits function can check it
