@@ -65,6 +65,7 @@ for (let i= 0; i< digits.length; i++){
        }else {
        let displayValue= display.textContent+= e.target.textContent;
        sessionStorage.setItem("chainNumber", display.textContent);
+      
              
    console.log (displayValue);
 }
@@ -117,11 +118,12 @@ subtractionButton.addEventListener("click", function (e){
     //enable the float button
     floatButton.disabled=false;
        sessionStorage.setItem("dispNumber", display.textContent);
+       console.log("display number " + sessionStorage.getItem("dispNumber"))
     //se the operator for the operate function to take
    sessionStorage.setItem("operator", "-");
+   console.log( "operator " +  sessionStorage.getItem("operator"));
     //empty display area
  display.textContent="";
- 
  
  })
  
@@ -218,8 +220,8 @@ console.log (x);
 operate(x,y,z);
 display.textContent= (operate(x,y,z));
 /*sessionStorage.removeItem("dispNumber");
-   sessionStorage.removeItem("operator");
-   sessionStorage.removeItem("chainNumber");*/
+   sessionStorage.removeItem("operator");*/
+   sessionStorage.removeItem("chainNumber");
    //disable the float button
    floatButton.disabled=true;
 //get the clicked true so that the digits function can check it
