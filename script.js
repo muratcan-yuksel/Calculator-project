@@ -66,18 +66,14 @@ for (let i= 0; i< digits.length; i++){
         
          display.textContent="" + e.target.textContent;
         console.log(display.textContent);
-        
-      
-           
-       }else {
+        sessionStorage.setItem("chainNumber", display.textContent);
+    } else   {
        let displayValue= display.textContent+= e.target.textContent;
       // console.log(display.textContent);
        sessionStorage.setItem("chainNumber", display.textContent);
-      
-             
+                 
    console.log (displayValue);
-   
-}
+   }
   
    });
 }
