@@ -71,6 +71,7 @@ for (let i= 0; i< digits.length; i++){
   
    });
 }
+/*
 //delete button event listener
 deleteButton.addEventListener("click", function(e){
    let backSpaceDisplay= display.textContent;
@@ -82,7 +83,7 @@ deleteButton.addEventListener("click", function(e){
      console.log(str);
     display.textContent=str;
     str = sessionStorage.setItem("dispNumber", display.textContent);
-})
+})*/
 
 //clear button listener
 clearButton.addEventListener("click", function (e){
@@ -102,7 +103,7 @@ floatButton.disabled=false;
 //subtraction button listener
 subtractionButton.addEventListener("click", function (e){
     //do the following only if it's a fresh start
-    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null && display.textContent!==""  ) {
+    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null && display.textContent!==""   ) {
         let y= sessionStorage.getItem("dispNumber");
         console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
         let x = sessionStorage.getItem("operator");
@@ -150,7 +151,7 @@ additionButton.addEventListener("click", function (e){
 //multiplication event listener
 multiplicationButton.addEventListener("click", function (e){
     //do the following only if it's a fresh start
-    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null && display.textContent!==""   ) {
+    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null && display.textContent!==""     ) {
         let y= sessionStorage.getItem("dispNumber");
         console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
         let x = sessionStorage.getItem("operator");
@@ -173,7 +174,7 @@ multiplicationButton.addEventListener("click", function (e){
 //division event listener
 divisionButton.addEventListener("click", function (e){
     //do the following only if it's a fresh start
-    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null && display.textContent!==""   ) {
+    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null && display.textContent!==""    ) {
         let y= sessionStorage.getItem("dispNumber");
         console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
         let x = sessionStorage.getItem("operator");
@@ -216,9 +217,9 @@ let z = display.textContent;
 console.log (x);
 operate(x,y,z);
 display.textContent= (operate(x,y,z));
-sessionStorage.removeItem("dispNumber");
+/*sessionStorage.removeItem("dispNumber");
    sessionStorage.removeItem("operator");
-   sessionStorage.removeItem("chainNumber");
+   sessionStorage.removeItem("chainNumber");*/
    //disable the float button
    floatButton.disabled=true;
 //get the clicked true so that the digits function can check it
