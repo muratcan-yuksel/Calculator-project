@@ -77,7 +77,7 @@ for (let i= 0; i< digits.length; i++){
   
    });
 }
-/*
+
 //delete button event listener
 deleteButton.addEventListener("click", function(e){
    let backSpaceDisplay= display.textContent;
@@ -89,7 +89,7 @@ deleteButton.addEventListener("click", function(e){
      console.log(str);
     display.textContent=str;
     str = sessionStorage.setItem("dispNumber", display.textContent);
-})*/
+})
 
 //clear button listener
 clearButton.addEventListener("click", function (e){
