@@ -146,6 +146,8 @@ additionButton.addEventListener("click", function (e){
     sessionStorage.setItem("dispNumber", display.textContent);
     //se the operator for the operate function to take
    sessionStorage.setItem("operator", "+");
+   console.log("display number " + sessionStorage.getItem("dispNumber"))
+ console.log( "operator " +  sessionStorage.getItem("operator"));
     //empty display area
  display.textContent="";
   })
@@ -169,6 +171,8 @@ multiplicationButton.addEventListener("click", function (e){
      sessionStorage.setItem("dispNumber", display.textContent);
     //se the operator for the operate function to take
      sessionStorage.setItem("operator", "*");
+     console.log("display number " + sessionStorage.getItem("dispNumber"))
+ console.log( "operator " +  sessionStorage.getItem("operator"));
     //empty display area
      display.textContent=""; 
  })
@@ -192,6 +196,8 @@ floatButton.disabled=false;
     sessionStorage.setItem("dispNumber", display.textContent);
     //set the operator for the operate function to take on
    sessionStorage.setItem("operator", "/");
+   console.log("display number " + sessionStorage.getItem("dispNumber"))
+ console.log( "operator " +  sessionStorage.getItem("operator"));
     //empty display area
  display.textContent="";
  })
