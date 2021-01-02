@@ -1,4 +1,7 @@
-
+//so that refreshing page would delete everything
+sessionStorage.removeItem("dispNumber");
+   sessionStorage.removeItem("operator");
+   sessionStorage.removeItem("chainNumber");
 // 4 basic operation functions
 let addition = function (x, y){
     //parseFloat turns the string into numbers so that it won't concat
@@ -236,9 +239,9 @@ operate(x,y,z);
 display.textContent= (operate(x,y,z));
 sessionStorage.removeItem("dispNumber");
    sessionStorage.removeItem("operator");
-   sessionStorage.setItem("chainNumber", display.textContent);
-   //sessionStorage.setItem("equalNumber", display.textContent);
-   console.log(sessionStorage.getItem("equalNumber"));
+   sessionStorage.removeItem("chainNumber");
+   sessionStorage.setItem("dispNumber", display.textContent);
+   console.log(sessionStorage.getItem("dispNumber"));
    //disable the float button
    floatButton.disabled=true;
 //get the clicked true so that the digits function can check it
