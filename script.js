@@ -221,12 +221,13 @@ equalsTo.addEventListener("click", function(e){
 let x = sessionStorage.getItem("operator");
 let y= sessionStorage.getItem("dispNumber");
 let z = display.textContent;
-//console.log(  y - z);
-console.log (x);
+console.log (x + "= operator" );
+console.log (y + "= displaynumber");
+console.log (z + "textcontent");
 operate(x,y,z);
 display.textContent= (operate(x,y,z));
-/*sessionStorage.removeItem("dispNumber");
-   sessionStorage.removeItem("operator");*/
+sessionStorage.removeItem("dispNumber");
+   sessionStorage.removeItem("operator");
    sessionStorage.removeItem("chainNumber");
    //disable the float button
    floatButton.disabled=true;
