@@ -71,7 +71,13 @@ for (let i= 0; i< digits.length; i++){
        let displayValue= display.textContent+= e.target.textContent;
       // console.log(display.textContent);
        sessionStorage.setItem("chainNumber", display.textContent);
-         additionButton.disabled = false; 
+        
+       //enable operation buttons
+       additionButton.disabled = false; 
+       subtractionButton.disabled=false;
+    multiplicationButton.disabled=false;
+    divisionButton.disabled=false;
+
    console.log (displayValue);
    }
   
@@ -103,6 +109,12 @@ clearButton.addEventListener("click", function (e){
     console.log("chainNo" + sessionStorage.getItem("chainNumber"));
 //enable the float button
 floatButton.disabled=false;
+//disable operation buttons after clear button
+additionButton.disabled=true;
+subtractionButton.disabled=true;
+multiplicationButton.disabled=true;
+divisionButton.disabled=true;
+
     display.textContent = "";
 })
 
