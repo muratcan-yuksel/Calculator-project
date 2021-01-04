@@ -56,7 +56,12 @@ let display = document.getElementById("display");
 let digits = document.querySelectorAll(".digits");
 for (let i= 0; i< digits.length; i++){
        digits[i].addEventListener("click", function(e) {
-      
+        //enable operation buttons
+        additionButton.disabled = false; 
+        subtractionButton.disabled=false;
+     multiplicationButton.disabled=false;
+     divisionButton.disabled=false;
+     
        //fixes the Nope123124 etc. issue
        if (display.textContent==="Nope" || display.textContent === 0 || clicked ==true ){
            //enable the floatButton
@@ -72,11 +77,7 @@ for (let i= 0; i< digits.length; i++){
       // console.log(display.textContent);
        sessionStorage.setItem("chainNumber", display.textContent);
         
-       //enable operation buttons
-       additionButton.disabled = false; 
-       subtractionButton.disabled=false;
-    multiplicationButton.disabled=false;
-    divisionButton.disabled=false;
+     
 
    console.log (displayValue);
    }
