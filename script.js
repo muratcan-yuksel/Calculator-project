@@ -31,11 +31,10 @@ let operate = function (x,y,z) {
         return display.textContent="Nope";
     }else if (x=="/"){
         return division(y,z);
-        
+    }else if (x == null) {
+        return z;
     }
     }
-
-
 
 //get the operation buttons
 const additionButton = document.getElementById("addition");
@@ -48,7 +47,6 @@ const clearButton = document.getElementById("clear");
 const floatButton = document.getElementById("float");
 //get the backspace button
 const deleteButton = document.getElementById("backspace");
-
 
 //get the display part
 let display = document.getElementById("display");
