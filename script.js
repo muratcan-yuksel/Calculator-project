@@ -2,6 +2,7 @@
 sessionStorage.removeItem("dispNumber");
    sessionStorage.removeItem("operator");
    sessionStorage.removeItem("chainNumber");
+
 // 4 basic operation functions
 let addition = function (x, y){
     //parseFloat turns the string into numbers so that it won't concat
@@ -25,7 +26,8 @@ let operate = function (x,y,z) {
        return addition(y,z);
     } else if ( x== "-"){
         return subtraction(y,z);
-    }else if (x== "*"){
+    }
+    else if (x== "*"){
         return multiplication(y,z);
     }else if (x=="/" && z== 0){ //snarky error mesage for divided by zero
         return display.textContent="Nope";
@@ -69,7 +71,7 @@ for (let i= 0; i< digits.length; i++){
        let displayValue= display.textContent+= e.target.textContent;
       // console.log(display.textContent);
        sessionStorage.setItem("chainNumber", display.textContent);
-                 
+         additionButton.disabled = false; 
    console.log (displayValue);
    }
   
@@ -243,6 +245,11 @@ sessionStorage.removeItem("dispNumber");
 
 })
 
+//disable operation buttons at the beginning
+additionButton.disabled=true;
+subtractionButton.disabled=true;
+multiplicationButton.disabled=true;
+divisionButton.disabled=true;
 
    
 
