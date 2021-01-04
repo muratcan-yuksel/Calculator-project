@@ -61,7 +61,9 @@ for (let i= 0; i< digits.length; i++){
         subtractionButton.disabled=false;
      multiplicationButton.disabled=false;
      divisionButton.disabled=false;
-     
+     //enable equalsTo after a number is given
+     equalsTo.disabled=false;
+      
        //fixes the Nope123124 etc. issue
        if (display.textContent==="Nope" || display.textContent === 0 || clicked ==true ){
            //enable the floatButton
@@ -135,6 +137,9 @@ subtractionButton.addEventListener("click", function (e){
     }
     //enable the float button
     floatButton.disabled=false;
+//disable equals button (will enable it after pressing a digit)
+//actually this subtraction button works perfectly, but I'm gonna disable it too bcs the other's are fucked up
+equalsTo.disabled=true;
        sessionStorage.setItem("dispNumber", display.textContent);
        console.log("display number " + sessionStorage.getItem("dispNumber"))
     //se the operator for the operate function to take
@@ -161,6 +166,8 @@ additionButton.addEventListener("click", function (e){
     }
     //enable the float button
     floatButton.disabled=false;
+//disable equals button (will enable it after pressing a digit)
+equalsTo.disabled=true;
     sessionStorage.setItem("dispNumber", display.textContent);
     //se the operator for the operate function to take
    sessionStorage.setItem("operator", "+");
@@ -186,6 +193,8 @@ multiplicationButton.addEventListener("click", function (e){
     }
     //enable the float button
     floatButton.disabled=false;
+      //disable equals button (will enable it after pressing a digit)
+equalsTo.disabled=true;
      sessionStorage.setItem("dispNumber", display.textContent);
     //se the operator for the operate function to take
      sessionStorage.setItem("operator", "*");
@@ -211,6 +220,8 @@ divisionButton.addEventListener("click", function (e){
     }
 //enable the float button
 floatButton.disabled=false;
+  //disable equals button (will enable it after pressing a digit)
+  equalsTo.disabled=true;
 sessionStorage.setItem("dispNumber", display.textContent);
     
     //set the operator for the operate function to take on
@@ -255,7 +266,7 @@ sessionStorage.removeItem("dispNumber");
    floatButton.disabled=true;
 //get the clicked true so that the digits function can check it
    clicked= true;
-
+ 
 })
 
 //disable operation buttons at the beginning
