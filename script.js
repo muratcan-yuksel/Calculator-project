@@ -5,8 +5,11 @@ sessionStorage.removeItem("dispNumber");
 
 // 4 basic operation functions
 let addition = function (x, y){
+    if (x==""){
+        return x=0;
+    }else{
     //parseFloat turns the string into numbers so that it won't concat
- return +(Math.round((parseFloat(x) + parseFloat(y)) + "e+2")  + "e-2");
+ return +(Math.round((parseFloat(x) + parseFloat(y)) + "e+2")  + "e-2");}
 
 }
 //following math round rounds the long decimal numbers
