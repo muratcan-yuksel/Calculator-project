@@ -22,18 +22,19 @@ let division = function (x,y){
 }
 // a function that calls the operation functions 
 let operate = function (x,y,z) {
-      if (x == "+" ) {
+    if (x == "+" && y == "-" )  {
+        y = 0;
+        return addition(y,z);
+    }else if (x == "+" ) {
        return addition(y,z);
     } else if ( x== "-"){
         return subtraction(y,z);
     }else if (x == "*" && y == "-"){
         y=1;
         return multiplication(y,z);
-    }
-    else if (x== "*" ){
+    }else if (x== "*" ){
         return multiplication(y,z);
-    }
-    else if (x=="/" && z== 0){ //snarky error mesage for divided by zero
+    }else if (x=="/" && z== 0){ //snarky error mesage for divided by zero
         return display.textContent="Nope";
     }else if (x=="/"){
         return division(y,z);
