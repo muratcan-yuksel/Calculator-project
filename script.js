@@ -5,11 +5,8 @@ sessionStorage.removeItem("dispNumber");
 
 // 4 basic operation functions
 let addition = function (x, y){
-    if (x==""){
-        return x=0;
-    }else{
     //parseFloat turns the string into numbers so that it won't concat
- return +(Math.round((parseFloat(x) + parseFloat(y)) + "e+2")  + "e-2");}
+ return +(Math.round((parseFloat(x) + parseFloat(y)) + "e+2")  + "e-2");
 
 }
 //following math round rounds the long decimal numbers
@@ -25,7 +22,7 @@ let division = function (x,y){
 }
 // a function that calls the operation functions 
 let operate = function (x,y,z) {
-    if (x == "+") {
+      if (x == "+") {
        return addition(y,z);
     } else if ( x== "-"){
         return subtraction(y,z);
@@ -167,7 +164,7 @@ equalsTo.disabled=true;
 //addition button listener
 additionButton.addEventListener("click", function (e){
     //do the following only if it's a fresh start
-    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null && display.textContent!==""  ) {
+    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null /*&& display.textContent!=="" */ ) {
         let y= sessionStorage.getItem("dispNumber");
         console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
         let x = sessionStorage.getItem("operator");
@@ -183,7 +180,7 @@ additionButton.addEventListener("click", function (e){
 //disable equals button (will enable it after pressing a digit)
 equalsTo.disabled=true;
     sessionStorage.setItem("dispNumber", display.textContent);
-    //se the operator for the operate function to take
+    //set the operator for the operate function to take
    sessionStorage.setItem("operator", "+");
    console.log("display number " + sessionStorage.getItem("dispNumber"))
  console.log( "operator " +  sessionStorage.getItem("operator"));
