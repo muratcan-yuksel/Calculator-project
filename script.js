@@ -57,10 +57,10 @@ let digits = document.querySelectorAll(".digits");
 for (let i= 0; i< digits.length; i++){
        digits[i].addEventListener("click", function(e) {
         //enable operation buttons
-        additionButton.disabled = false; 
-        subtractionButton.disabled=false;
-     multiplicationButton.disabled=false;
-     divisionButton.disabled=false;
+    additionButton.disabled = false; 
+    subtractionButton.disabled=false;
+    multiplicationButton.disabled=false;
+    divisionButton.disabled=false;
      //enable equalsTo after a number is given
      equalsTo.disabled=false;
       
@@ -78,15 +78,13 @@ for (let i= 0; i< digits.length; i++){
        let displayValue= display.textContent+= e.target.textContent;
       // console.log(display.textContent);
        sessionStorage.setItem("chainNumber", display.textContent);
-        
-     
 
    console.log (displayValue);
    }
   
    });
 }
-
+deleteCheck= false;
 //delete button event listener
 deleteButton.addEventListener("click", function(e){
    let backSpaceDisplay= display.textContent;
@@ -98,7 +96,11 @@ deleteButton.addEventListener("click", function(e){
      console.log(str);
     display.textContent=str;
     str = sessionStorage.setItem("dispNumber", display.textContent);
+    deleteCheck= true;
 })
+if ( deleteCheck=== true && sessionStorage.getItem("dispNumber")===""){
+    equalsTo.disabled=true;
+}
 
 //clear button listener
 clearButton.addEventListener("click", function (e){
