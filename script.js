@@ -27,7 +27,11 @@ let operate = function (x,y,z) {
         return addition(y,z);
     }else if (x == "+" ) {
        return addition(y,z);
-    } else if ( x== "-"){
+    }//I'm not sure if this one was required but OK
+    else if ( x== "-" && y == "-"){
+        y = 0;
+        return subtraction(y,z);
+    }else if ( x== "-"){
         return subtraction(y,z);
     }else if (x == "*" && y == "-"){
         y=1;
@@ -36,7 +40,11 @@ let operate = function (x,y,z) {
         return multiplication(y,z);
     }else if (x=="/" && z== 0){ //snarky error mesage for divided by zero
         return display.textContent="Nope";
-    }else if (x=="/"){
+    }else if (x=="/" && y =="-"){
+        y= z*z;
+        return division(y,z);
+    }
+    else if (x=="/"){
         return division(y,z);
     }else if (x == null) {
         return z;
