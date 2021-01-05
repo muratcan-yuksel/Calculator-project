@@ -97,7 +97,12 @@ deleteButton.addEventListener("click", function(e){
     display.textContent=str;
     str = sessionStorage.setItem("dispNumber", display.textContent);
     deleteCheck= true;
+    //can't operate if the disp text is empty
+    if (display.textContent === ""){
+        equalsTo.disabled=true;
+    }
 })
+
 if ( deleteCheck=== true && sessionStorage.getItem("dispNumber")===""){
     equalsTo.disabled=true;
 }
@@ -122,6 +127,10 @@ divisionButton.disabled=true;
 
     display.textContent = "";
 })
+
+
+
+
 
 //subtraction button listener
 subtractionButton.addEventListener("click", function (e){
@@ -277,6 +286,7 @@ subtractionButton.disabled=true;
 multiplicationButton.disabled=true;
 divisionButton.disabled=true;
 
-   
+
+
 
 
