@@ -43,8 +43,7 @@ let operate = function (x,y,z) {
     }else if (x=="/" && y =="-"){
         y= z*z;
         return division(y,z);
-    }
-    else if (x=="/"){
+    }else if (x=="/"){
         return division(y,z);
     }else if (x == null) {
         return z;
@@ -69,36 +68,36 @@ let display = document.getElementById("display");
 let digits = document.querySelectorAll(".digits");
 for (let i= 0; i< digits.length; i++){
        digits[i].addEventListener("click", function(e) {
-        //enable operation buttons
+    //enable operation buttons
     additionButton.disabled = false; 
     subtractionButton.disabled=false;
     multiplicationButton.disabled=false;
     divisionButton.disabled=false;
-     //enable equalsTo after a number is given
-     equalsTo.disabled=false;
+    //enable equalsTo after a number is given
+    equalsTo.disabled=false;
       
-       //fixes the Nope123124 etc. issue
-       if (display.textContent==="Nope" || display.textContent === 0 || clicked ==true ){
-           //enable the floatButton
-        floatButton.disabled=false;
-        //disable the floatButton
-        clicked = false;   
+    //fixes the Nope123124 etc. issue
+    if (display.textContent==="Nope" || display.textContent === 0 || clicked ==true ){
+    //enable the floatButton
+    floatButton.disabled=false;
+    //disable the floatButton
+    clicked = false;   
         
-         display.textContent="" + e.target.textContent;
-        console.log(display.textContent);
-        sessionStorage.setItem("chainNumber", display.textContent);
+    display.textContent="" + e.target.textContent;
+    console.log(display.textContent);
+    sessionStorage.setItem("chainNumber", display.textContent);
     } else   {
-       let displayValue= display.textContent+= e.target.textContent;
-      // console.log(display.textContent);
-       sessionStorage.setItem("chainNumber", display.textContent);
+    let displayValue= display.textContent+= e.target.textContent;
+    // console.log(display.textContent);
+    sessionStorage.setItem("chainNumber", display.textContent);
 
    console.log (displayValue);
    }
   
    });
 }
-deleteCheck= false;
-//delete button event listener
+    deleteCheck= false;
+    //delete button event listener
 deleteButton.addEventListener("click", function(e){
    let backSpaceDisplay= display.textContent;
     let arr = backSpaceDisplay.split("");
@@ -112,7 +111,7 @@ deleteButton.addEventListener("click", function(e){
     deleteCheck= true;
     //can't operate if the disp text is empty
     if (display.textContent === ""){
-        equalsTo.disabled=true;
+    equalsTo.disabled=true;
     }
 })
 
@@ -126,23 +125,17 @@ clearButton.addEventListener("click", function (e){
    sessionStorage.removeItem("operator");
    sessionStorage.removeItem("chainNumber");
     console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
-    
     console.log( "operator" +  sessionStorage.getItem("operator"));
-    
     console.log("chainNo" + sessionStorage.getItem("chainNumber"));
-//enable the float button
-floatButton.disabled=false;
-//disable operation buttons after clear button
-additionButton.disabled=true;
-subtractionButton.disabled=true;
-multiplicationButton.disabled=true;
-divisionButton.disabled=true;
-
+    //enable the float button
+    floatButton.disabled=false;
+    //disable operation buttons after clear button
+    additionButton.disabled=true;
+    subtractionButton.disabled=true;
+    multiplicationButton.disabled=true;
+    divisionButton.disabled=true;
     display.textContent = "";
 })
-
-
-
 
 
 //subtraction button listener
@@ -166,11 +159,11 @@ subtractionButton.addEventListener("click", function (e){
 equalsTo.disabled=true;
        sessionStorage.setItem("dispNumber", display.textContent);
        console.log("display number " + sessionStorage.getItem("dispNumber"))
-    //se the operator for the operate function to take
-   sessionStorage.setItem("operator", "-");
-   console.log( "operator " +  sessionStorage.getItem("operator"));
-    //empty display area
- display.textContent="";
+        //se the operator for the operate function to take
+        sessionStorage.setItem("operator", "-");
+        console.log( "operator " +  sessionStorage.getItem("operator"));
+        //empty display area
+         display.textContent="";
  
  })
  
@@ -190,15 +183,15 @@ additionButton.addEventListener("click", function (e){
     }
     //enable the float button
     floatButton.disabled=false;
-//disable equals button (will enable it after pressing a digit)
-equalsTo.disabled=true;
+    //disable equals button (will enable it after pressing a digit)
+    equalsTo.disabled=true;
     sessionStorage.setItem("dispNumber", display.textContent);
     //set the operator for the operate function to take
-   sessionStorage.setItem("operator", "+");
-   console.log("display number " + sessionStorage.getItem("dispNumber"))
- console.log( "operator " +  sessionStorage.getItem("operator"));
+    sessionStorage.setItem("operator", "+");
+    console.log("display number " + sessionStorage.getItem("dispNumber"))
+    console.log( "operator " +  sessionStorage.getItem("operator"));
     //empty display area
- display.textContent="";
+    display.textContent="";
   })
 
 //multiplication event listener
@@ -217,15 +210,15 @@ multiplicationButton.addEventListener("click", function (e){
     }
     //enable the float button
     floatButton.disabled=false;
-      //disable equals button (will enable it after pressing a digit)
-equalsTo.disabled=true;
-     sessionStorage.setItem("dispNumber", display.textContent);
+    //disable equals button (will enable it after pressing a digit)
+    equalsTo.disabled=true;
+    sessionStorage.setItem("dispNumber", display.textContent);
     //se the operator for the operate function to take
-     sessionStorage.setItem("operator", "*");
-     console.log("display number " + sessionStorage.getItem("dispNumber"))
- console.log( "operator " +  sessionStorage.getItem("operator"));
+    sessionStorage.setItem("operator", "*");
+    console.log("display number " + sessionStorage.getItem("dispNumber"))
+    console.log( "operator " +  sessionStorage.getItem("operator"));
     //empty display area
-     display.textContent=""; 
+    display.textContent=""; 
  })
 
 //division event listener
@@ -242,27 +235,25 @@ divisionButton.addEventListener("click", function (e){
         console.log (operate(x,y,z));
         display.textContent = operate(x,y,z);
     }
-//enable the float button
-floatButton.disabled=false;
-  //disable equals button (will enable it after pressing a digit)
-  equalsTo.disabled=true;
-sessionStorage.setItem("dispNumber", display.textContent);
-    
-    //set the operator for the operate function to take on
-   sessionStorage.setItem("operator", "/");
-   console.log("display number " + sessionStorage.getItem("dispNumber"))
-   console.log( "operator " +  sessionStorage.getItem("operator"));
-    
-    //empty display area
- display.textContent="";
+        //enable the float button
+        floatButton.disabled=false;
+        //disable equals button (will enable it after pressing a digit)
+        equalsTo.disabled=true;
+        sessionStorage.setItem("dispNumber", display.textContent);  
+        //set the operator for the operate function to take on
+        sessionStorage.setItem("operator", "/");
+        console.log("display number " + sessionStorage.getItem("dispNumber"))
+        console.log( "operator " +  sessionStorage.getItem("operator"));
+        //empty display area
+        display.textContent="";
  })
-//fire float button, disable it once clicked
-floatButton.addEventListener("click", function(e){
-    display.textContent+= (e.target.textContent) + "";
-   /*let element= document.getElementById("float");
-   element.remove();*/
-floatButton.disabled=true;
-   console.log("hello");
+        //fire float button, disable it once clicked
+        floatButton.addEventListener("click", function(e){
+        display.textContent+= (e.target.textContent) + "";
+        /*let element= document.getElementById("float");
+        element.remove();*/
+        floatButton.disabled=true;
+        console.log("hello");
 
  })
 
@@ -271,25 +262,25 @@ let clicked = false;
 //equals event listener
 let equalsTo= document.getElementById("equals");
 //makes a subtraction of the two given numbers
-equalsTo.addEventListener("click", function(e){
- //shorten the parameters
-let x = sessionStorage.getItem("operator");
-let y= sessionStorage.getItem("dispNumber");
-let z = display.textContent;
-console.log (x + "= operator" );
-console.log (y + "= displaynumber");
-console.log (z + "textcontent");
-operate(x,y,z);
-display.textContent= (operate(x,y,z));
-sessionStorage.removeItem("dispNumber");
-   sessionStorage.removeItem("operator");
-   sessionStorage.removeItem("chainNumber");
-   sessionStorage.setItem("dispNumber", display.textContent);
-   console.log(sessionStorage.getItem("dispNumber"));
-   //disable the float button
-   floatButton.disabled=true;
-//get the clicked true so that the digits function can check it
-   clicked= true;
+    equalsTo.addEventListener("click", function(e){
+        //shorten the parameters
+        let x = sessionStorage.getItem("operator");
+        let y= sessionStorage.getItem("dispNumber");
+        let z = display.textContent;
+        console.log (x + "= operator" );
+        console.log (y + "= displaynumber");
+        console.log (z + "textcontent");
+        operate(x,y,z);
+        display.textContent= (operate(x,y,z));
+        sessionStorage.removeItem("dispNumber");
+        sessionStorage.removeItem("operator");
+        sessionStorage.removeItem("chainNumber");
+        sessionStorage.setItem("dispNumber", display.textContent);
+        console.log(sessionStorage.getItem("dispNumber"));
+        //disable the float button
+        floatButton.disabled=true;
+        //get the clicked true so that the digits function can check it
+        clicked= true;
  
 })
 
