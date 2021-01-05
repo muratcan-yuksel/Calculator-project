@@ -164,7 +164,7 @@ equalsTo.disabled=true;
 //addition button listener
 additionButton.addEventListener("click", function (e){
     //do the following only if it's a fresh start
-    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null /*&& display.textContent!=="" */ ) {
+    if (sessionStorage.getItem("dispNumber")!== null && sessionStorage.getItem("operator") !== null && sessionStorage.getItem("chainNumber")!==null && sessionStorage.getItem("dispNumber")!==""  ) {
         let y= sessionStorage.getItem("dispNumber");
         console.log("dispnumber" + sessionStorage.getItem("dispNumber"));
         let x = sessionStorage.getItem("operator");
