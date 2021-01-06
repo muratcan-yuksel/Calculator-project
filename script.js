@@ -30,6 +30,7 @@ let operate = function (x,y,z) {
     }//I'm not sure if this one was required but OK
     else if ( x== "-" && y == "-"){
         y = 0;
+        z = (-1) *z;
         return subtraction(y,z);
     }else if ( x== "-"){
         return subtraction(y,z);
