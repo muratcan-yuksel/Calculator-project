@@ -1,10 +1,11 @@
 #container{
+    position: absolute;
+    left:25%;
     border: 10px solid black;
     min-height: 90vh;
     max-height: 90vh;
     min-width: 50vw;
     max-width: 50vw;
-   
     display:grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, 1fr);
@@ -47,6 +48,8 @@
 #float{
     grid-row:6;
     background-color:rgb(117, 161, 51);
+    font-size: 40px;
+    font-weight: bold;
 }
 #backspace{
     grid-row:2;
@@ -93,6 +96,6 @@ font-size: 40px;
     grid-column:1/5;
     display:flex;
     justify-self: flex-end;
-    font-size: 50px;
+    font-size: 65px;
     
 }

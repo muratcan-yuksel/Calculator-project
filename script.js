@@ -254,7 +254,7 @@ divisionButton.addEventListener("click", function (e){
         /*let element= document.getElementById("float");
         element.remove();*/
         floatButton.disabled=true;
-        console.log("hello");
+        
 
  })
 
