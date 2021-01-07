@@ -1,7 +1,10 @@
+body{
+    background-color: rgba(240, 240, 240, 0.884);
+}
 #container{
     position: absolute;
     left:25%;
-    border: 10px solid black;
+    border: 15px solid black;
     min-height: 90vh;
     max-height: 90vh;
     min-width: 50vw;
