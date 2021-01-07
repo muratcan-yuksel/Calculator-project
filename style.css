@@ -1,9 +1,47 @@
 #container{
+    
+    width: 70vw;
+    height: 40vw;
     display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+   
 }
-#numbers{
-    display:grid;
+#zero{
+    grid-row: 6;
+    
 }
-#operations{
-    display:grid;
+#one{
+    grid-row:5;
+}
+#two{
+    grid-row: 5;
+}
+#three{
+    grid-row: 5;
+
+}
+#four{
+    grid-row: 4;
+}
+#five{
+    grid-row: 4;
+}
+#six{
+    grid-row: 4;
+}
+#seven{
+    grid-row: 3;
+}
+#eight{
+    grid-row: 3;
+}
+#nine{
+    grid-row: 3;
+}
+
+#display{
+   
+    grid-row: 1;
+    grid-column:1/5;
 }
